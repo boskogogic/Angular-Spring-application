@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence              http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+  <persistence-unit name="CRM">
+    <description>
+            Persistence unit for Hibernate User Guide
+    </description>
+    <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+    <!-- Entity classes -->
+    <class>com.example.demo.model.Zaposleni</class>
+    <class>com.example.demo.model.Automobil</class>
+    <class>com.example.demo.model.ElektricniBicikl</class>
+    <class>com.example.demo.model.ElektricniTrotinet</class>
+    <class>com.example.demo.model.Proizvodjac</class>
+    <class>com.example.demo.model.Kvar</class>
+    <class>com.example.demo.model.Iznajmljivanje</class>
+    <class>com.example.demo.model.Korisnik</class> 
+    
+  <!-- </persistence-unit> -->
+    <exclude-unlisted-classes>true</exclude-unlisted-classes>
+    <properties>
+      <!-- Na zvanicnoj dokumentaciji nema ovog propertija -->
+      <!-- Nakon sto sam izbacio ovaj property -> Proradilo!! -->
+      <!-- Added dialect -> nothing changed -->
+      <!-- <property name="hibernate.dialect" value="org.hibernate.dialect.SQLServerDialect"/> -->
+      <property name="jakarta.persistence.jdbc.driver" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
+      <!-- potrebno je napraviti i bazu u microsoft sql management.. Tabele se prave same, ne i baze -->
+      <property name="jakarta.persistence.jdbc.url" value="jdbc:sqlserver://localhost:1433;encrypt=true;trustServerCertificate=true;integratedSecurity=true;databaseName=springapp"/>
+      <property name="jakarta.persistence.jdbc.user" value="DESKTOP-F2RDMMA\HP"/>
+      <property name="jakarta.persistence.jdbc.password" value=""/>
+      <!-- <property name="hibernate.connection.url" 
+                      value="jdbc:sqlserver://localhost:1433;encrypt=true;trustServerCertificate=true;integratedSecurity=false;databaseName=hibernatedemo"/> -->
+      <!-- Trying with this property -->
+      <property name="hibernate.generate_statistics" value="true"/>
+      <!-- Hibernate property for showing SQL Statements -->
+      <property name="hibernate.show_sql" value="true"/>
+      <property name="format_sql" value="true"/>
+      <property name="hibernate.hbm2ddl.auto" value="none"/>
+      <!-- From stackoverflow suggestion -->
+      <property name="hibernate.enhancer.enableDirtyTracking" value="false"/>
+      <property name="hibernate.enhancer.enableLazyInitialization" value="false"/>
+      <!--  added thoose two properties but didn't help
+            <property name="hibernate.transaction.factory_class" value="org.hibernate.transaction.JTATransactionFactory" />
+            <property name="hibernate.transaction.manager_lookup_class" value="jakarta.transaction.TransactionManager" /> -->
+      <property name="hibernate.transaction.jta.platform" value="org.hibernate.service.jta.platform.internal.SunOneJtaPlatform"/>
+      <property name="jakarta.persistence.schema-generation.database.action" value="create"/>
+    </properties>
+  </persistence-unit>
+</persistence>
