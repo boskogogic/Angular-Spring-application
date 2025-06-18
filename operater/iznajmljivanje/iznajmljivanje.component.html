@@ -1,0 +1,33 @@
+<h2> IZNAJMLJIVANJE </h2>
+<table mat-table [dataSource]="iznajmljivanja" class="mat-elevation-z8, body">
+    <!--  displayedColumns: string[] = ['id', 'identifikacioniDokument', 'datum' , 'trenutnaLokacija' , 'konacnaLokacija' ]; -->
+        <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef> No. </th>
+            <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="identifikacioniDokument">
+            <th mat-header-cell *matHeaderCellDef> Identifikacioni Dokument </th>
+            <td mat-cell *matCellDef="let element"> {{element.identifikacioniDokument}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="datum">
+            <th mat-header-cell *matHeaderCellDef> Datum </th>
+            <td mat-cell *matCellDef="let element"> {{element.datum}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="trenutnaLokacija">
+            <th mat-header-cell *matHeaderCellDef> Trenutna Lokacija </th>
+            <td mat-cell *matCellDef="let element"> {{element.trenutnaLokacija}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="konacnaLokacija">
+            <th mat-header-cell *matHeaderCellDef> Konacna Lokacija </th>
+            <td mat-cell *matCellDef="let element"> {{element.konacnaLokacija}} </td>
+        </ng-container>
+
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+</table>

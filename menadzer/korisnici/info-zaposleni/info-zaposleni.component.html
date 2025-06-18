@@ -1,0 +1,12 @@
+<div class="container">
+
+    <h2 mat-dialog-title class="header">Korisnik {{data.id}}</h2>
+    <mat-dialog-content>
+      <p><strong>Blokiran:</strong> {{ data.id }}</p>
+      
+    </mat-dialog-content>
+    <mat-dialog-actions>
+  
+      <button mat-raised-button color="primary" (click)="onCancelClick()">CLOSE</button>
+    </mat-dialog-actions>
+  </div>

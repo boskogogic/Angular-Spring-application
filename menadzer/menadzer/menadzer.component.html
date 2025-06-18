@@ -1,0 +1,7 @@
+<app-msidemenu
+    [isSidebarCollapsed]="isSidebarCollapsed()"
+    (changeIsSidebarCollapsed)="changeIsSidebarCollapsed($event)"></app-msidemenu>
+<app-main
+    [isSidebarCollapsed]="isSidebarCollapsed()"
+    [screenWidth]="screenWidth()"
+  />

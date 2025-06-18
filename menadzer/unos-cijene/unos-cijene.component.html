@@ -1,0 +1,46 @@
+<h2> DEFINISANJE CIJENA</h2>
+
+      <div class="container">
+        <form (ngSubmit)="onSubmitAutomobilCijena()">
+        <div>
+            <div>
+                <h5>Cijena iznajmljivanja automobila [KM] </h5>
+                <!-- <label for="cijenaIznajmljivanjaAutomobila">Cijena iznajmljivanja automobila [KM]</label>-->
+                <input type="text" class="form-control" id="cijenaIznajmljivanjaAutomobila" [(ngModel)]="cijenaIznajmljivanjaAutomobila" name="cijenaIznajmljivanjaAutomobila" required placeholder="cijena">
+            </div>
+        </div>
+        <!-- <button mat-raised-button color="primary" class="button-row" (click)="create()">CREATE</button>-->
+      
+          <button mat-raised-button color="primary" class="button-row" type="submit">CREATE</button>
+        </form>
+      </div>
+      <mat-divider></mat-divider>
+
+      <div class="container">
+        <form (ngSubmit)="onSubmitBiciklCijena()">
+        <div>
+            <div>
+                <h5>Cijena iznajmljivanja bicikla [KM] </h5>
+                <input type="text" class="form-control" id="cijenaIznajmljivanjaBicikla" [(ngModel)]="cijenaIznajmljivanjaBicikla" name="cijenaIznajmljivanjaBicikla" required placeholder="cijena">
+            </div>
+        </div>
+        <!-- <button mat-raised-button color="primary" class="button-row" (click)="create()">CREATE</button>-->
+      
+          <button mat-raised-button color="primary" class="button-row" type="submit">CREATE</button>
+        </form>
+      </div>
+      <mat-divider></mat-divider>
+
+      <div class="container">
+        <form (ngSubmit)="onSubmitTrotinetCijena()">
+        <div>
+            <div>
+                <h5>Cijena iznajmljivanja trotineta [KM] </h5>
+                <input type="text" class="form-control" id="cijenaIznajmljivanjaTrotineta" [(ngModel)]="cijenaIznajmljivanjaTrotineta" name="cijenaIznajmljivanjaTrotineta" required placeholder="cijena">
+            </div>
+        </div>
+        <!-- <button mat-raised-button color="primary" class="button-row" (click)="create()">CREATE</button>-->
+      
+          <button mat-raised-button color="primary" class="button-row" type="submit">CREATE</button>
+        </form>
+      </div>

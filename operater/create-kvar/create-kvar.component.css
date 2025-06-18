@@ -1,0 +1,25 @@
+
+.body {
+    width: calc(100% - 5rem);
+    margin-left: 0rem;
+    z-index: 0;
+    position: relative;
+    top: 0;
+    transition: all 0.5s ease;
+    background: #f4f7fa;
+    padding: 3rem;
+  }
+
+  .button-row {
+    margin-top: 25px; /* Adjust as needed */
+    
+    margin: 5px;
+  }
+
+  .dropdownmenu {
+    margin-top: 25px; /* Adjust as needed */
+    
+    margin: 10px;
+  }
+
+

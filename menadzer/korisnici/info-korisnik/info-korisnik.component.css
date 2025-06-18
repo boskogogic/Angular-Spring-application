@@ -1,0 +1,91 @@
+/* Dialog Header */
+.mat-dialog-title {
+    font-weight: bold;
+    font-size: 1.5rem;
+    text-align: center;
+    background-color: #2196f3;  /* Blue background */
+    color: white;  /* White text */
+    padding: 16px 24px;
+    border-radius: 4px 4px 0 0;  /* Rounded top corners */
+  }
+  
+  /* Dialog Content Section */
+  .mat-dialog-content {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    max-height: 400px; /* Ensure the content fits nicely in the dialog */
+    overflow-y: auto; /* Allow scrolling if content is long */
+  }
+  
+  .mat-dialog-content p {
+    font-size: 1rem;
+    margin: 10px 0;
+    line-height: 1.6;
+  }
+  
+  .mat-dialog-content h3 {
+    font-size: 1.2rem;
+    margin-top: 20px;
+    color: #2196f3;
+    border-bottom: 2px solid #2196f3;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+  }
+  
+  /* Address Section Styling */
+  .mat-dialog-content .address {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+  }
+  
+  .mat-dialog-content .address p {
+    margin: 5px 0;
+    color: #333;
+  }
+  
+  /* Dialog Action Section */
+  .mat-dialog-actions {
+    padding: 10px;
+    display: flex;
+    justify-content: flex-end;
+    background-color: #f1f1f1;
+    border-top: 1px solid #ddd;
+    border-radius: 0 0 4px 4px; /* Rounded bottom corners */
+  }
+  
+  .mat-dialog-actions button {
+    background-color: #2196f3;  /* Blue button */
+    color: white;
+    font-weight: bold;
+    border-radius: 4px;
+    padding: 8px 16px;
+    margin-left: 10px;
+  }
+  
+  .mat-dialog-actions button:hover {
+    background-color: #1976d2;  /* Darker blue on hover */
+  }
+  
+  /* Responsive Design for Smaller Screens */
+  @media (max-width: 600px) {
+    .mat-dialog-title {
+      font-size: 1.2rem;
+    }
+  
+    .mat-dialog-content p,
+    .mat-dialog-content h3 {
+      font-size: 0.9rem;
+    }
+  
+    .mat-dialog-actions button {
+      font-size: 0.9rem;
+      padding: 6px 12px;
+    }
+
+    .header{
+      margin: 15px;
+    }
+  }

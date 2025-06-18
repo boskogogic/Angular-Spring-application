@@ -1,0 +1,113 @@
+
+
+
+<h2> DODAVANJE KVARA</h2>
+<mat-tab-group>
+    <mat-tab label="Automobili">
+      <div>
+        <h2 class="h3 mb-3 fw-normal mt-4">DODAJ KVAR Automobil</h2>
+        <form (ngSubmit)="onSubmitAutomobilKvar()">
+        <div>
+            <div>
+                <label for="datum" class="labela">Datum:</label>
+                <input type="text" class="form-control" id="datum" [(ngModel)]="datum" name="datum" required placeholder="datum">
+            </div>
+            <div>
+                <label for="opis">Opis:</label>
+                <input type="text" class="form-control" id="opis" [(ngModel)]="opis" name="opis" required placeholder="opis">
+            </div>
+            <div>
+                <label for="vrijeme" class="labela">Vrijeme:</label>
+                 <input type="text" class="form-control" id="vrijeme" [(ngModel)]="vrijeme" name="vrijeme" required placeholder="vrijeme">
+            </div>
+        
+            <mat-form-field class="dropdownmenu">
+                <mat-label >Automobil</mat-label>
+                <mat-select [(value)]="selected">
+                  @for (automobil of automobili; track automobil) {
+                    <mat-option [value]="automobil.objectId">{{automobil.objectId}}</mat-option>
+                  }
+                </mat-select>
+              </mat-form-field>
+     
+        </div>
+        <!-- <button mat-raised-button color="primary" class="button-row" (click)="create()">CREATE</button>-->
+      
+          <button mat-raised-button color="primary" class="button-row" type="submit">CREATE</button>
+        </form>
+      </div>
+    </mat-tab>
+
+
+    <mat-tab label="Bicikli"> 
+      <div>
+        <h2 class="h3 mb-3 fw-normal mt-4">DODAJ KVAR Bicikl</h2>
+        <form (ngSubmit)="onSubmitBiciklKvar()">
+        <div>
+            <div>
+                <label for="datum">Datum:</label>
+                <input type="text" class="form-control" id="datum" [(ngModel)]="datum" name="datum" required placeholder="datum">
+            </div>
+            <div>
+                <label for="opis">Opis:</label>
+                <input type="text" class="form-control" id="opis" [(ngModel)]="opis" name="opis" required placeholder="opis">
+            </div>
+            <div>
+                <label for="vrijeme">Vrijeme:</label>
+                 <input type="text" class="form-control" id="vrijeme" [(ngModel)]="vrijeme" name="vrijeme" required placeholder="vrijeme">
+            </div>
+        
+            <mat-form-field>
+                <mat-label>Bicikli</mat-label>
+                <mat-select [(value)]="selected">
+                  @for (bicikl of bicikli; track bicikl) {
+                    <mat-option [value]="bicikl.objectId">{{bicikl.objectId}}</mat-option>
+                  }
+                </mat-select>
+              </mat-form-field>
+     
+        </div>
+        <!-- <button mat-raised-button color="primary" class="button-row" (click)="create()">CREATE</button>-->
+      
+          <button mat-raised-button color="primary" class="button-row" type="submit">CREATE</button>
+        </form>
+      </div>
+
+    </mat-tab>
+    <mat-tab label="Trotineti"> 
+      <div>
+        <h2 class="h3 mb-3 fw-normal mt-4">DODAJ KVAR Trotinet</h2>
+        <form (ngSubmit)="onSubmitTrotinetKvar()">
+        <div>
+            <div>
+                <label for="datum">Datum:</label>
+                <input type="text" class="form-control" id="datum" [(ngModel)]="datum" name="datum" required placeholder="datum">
+            </div>
+            <div>
+                <label for="opis">Opis:</label>
+                <input type="text" class="form-control" id="opis" [(ngModel)]="opis" name="opis" required placeholder="opis">
+            </div>
+            <div>
+                <label for="vrijeme">Vrijeme:</label>
+                 <input type="text" class="form-control" id="vrijeme" [(ngModel)]="vrijeme" name="vrijeme" required placeholder="vrijeme">
+            </div>
+        
+            <mat-form-field>
+                <mat-label>Trotinet</mat-label>
+                <mat-select [(value)]="selected">
+                  @for (trotinet of trotineti; track trotinet) {
+                    <mat-option [value]="trotinet.objectId">{{trotinet.objectId}}</mat-option>
+                  }
+                </mat-select>
+              </mat-form-field>
+     
+        </div>
+        <!-- <button mat-raised-button color="primary" class="button-row" (click)="create()">CREATE</button>-->
+      
+          <button mat-raised-button color="primary" class="button-row" type="submit">CREATE</button>
+        </form>
+      </div>
+
+    </mat-tab>
+</mat-tab-group>
+<!-- <app-fileupload></app-fileupload> -->

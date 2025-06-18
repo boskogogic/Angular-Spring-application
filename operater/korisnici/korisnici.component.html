@@ -1,0 +1,51 @@
+<h2> KORISNICI </h2>
+    <table mat-table [dataSource]="dataKlijenti" class="mat-elevation-z8, body">
+      
+      <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+  
+      <!-- Position Column -->
+      <ng-container matColumnDef="position">
+      <th mat-header-cell *matHeaderCellDef> No. </th>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+      </ng-container>
+  
+      <!-- Proizvodjac Column -->
+      <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef> Email </th>
+      <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+      </ng-container>
+
+      <!-- Proizvodjac Column -->
+      <ng-container matColumnDef="korisnickoIme">
+          <th mat-header-cell *matHeaderCellDef> Korisnicko Ime </th>
+          <td mat-cell *matCellDef="let element"> {{element.korisnickoIme}} </td>
+          </ng-container>
+  
+      <!-- Model Column -->
+      <ng-container matColumnDef="block">
+      <th mat-header-cell *matHeaderCellDef> Blokiran </th>
+      <td mat-cell *matCellDef="let element"> {{element.blokiran}} </td>
+      </ng-container>
+
+      <!-- delete -->
+      <ng-container matColumnDef="isblock">
+      <th mat-header-cell *matHeaderCellDef> </th>
+      <td mat-cell *matCellDef="let element">
+          <button mat-raised-button color="warn" (click)="block(element)">
+              {{ element.blokiran ? 'DEBLOKIRAJ' : 'BLOKIRAJ' }}
+          </button>
+      </td> 
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumnsKlijenti"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumnsKlijenti;"></tr>
+
+    </table>
+
+
+    
+
+    
+  
+  

@@ -1,0 +1,41 @@
+<div
+  class="sidenav"
+ 
+>
+<!-- for sidebar collapse add above [ngClass]="isSidebarCollapsed() ? 'sidenav-collapsed' : ''"-->
+  <div class="logo-container">
+    <!-- button for sidebar collapse <button class="logo" (click)="toggleCollapse()">
+      <i class="fal fa-bars"></i>
+    </button> --> 
+    @if (!isSidebarCollapsed()) {
+      <div class="logo-text">MENADZER APP</div>
+      <button class="btn-close" (click)="closeSidenav()">
+        <i class="fal fa-times close-icon"></i>
+      </button>
+    }
+  </div>
+  <div class="sidenav-nav">
+    @for (item of items; track $index) {
+      <li class="sidenav-nav-item">
+        <a
+          class="sidenav-nav-link"
+          [routerLink]="item.routeLink"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          <i class="sidenav-link-icon" [class]="item.icon"></i>
+          @if (!isSidebarCollapsed()) {
+            <span class="sidenav-link-text">{{ item.label }}</span>
+          }
+        </a>
+      </li>
+    }
+    <section>
+      <div class="example-button-row">
+        <button mat-raised-button color="primary" class="button-row" (click)="signOut()">SIGNOUT</button>
+      </div>
+  </section>
+  </div>
+
+
+</div>
