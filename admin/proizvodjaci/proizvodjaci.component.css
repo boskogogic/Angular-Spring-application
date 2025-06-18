@@ -1,0 +1,11 @@
+.example-button-row {
+    display: table-cell;
+    max-width: 600px;
+    margin-right: 10px;   
+  }
+
+  .button-row {
+    margin-top: 25px; /* Adjust as needed */
+    margin-right: 10px; 
+    margin: 20px;
+  }

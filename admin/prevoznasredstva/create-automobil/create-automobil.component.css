@@ -1,0 +1,7 @@
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    flex: 1; /* Make each group stretch equally */
+    min-height: 0; /* Important: prevents overflow! */
+  }

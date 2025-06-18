@@ -1,0 +1,15 @@
+<h2 mat-dialog-title class="header">Proizvodjac {{data.id}}</h2>
+<mat-dialog-content>
+  <p><strong>Adresa:</strong> </p> <p>{{ data.adresa }}</p>  <input class="form-control" [(ngModel)]="adresa" />
+  <p><strong>Drzava:</strong> <p> <p>{{ data.drzava }} </p> <input class="form-control" [(ngModel)]="drzava" /><!-- </p> -->
+  <p><strong>Email:</strong></p> <p>{{ data.email }} </p> <input class="form-control" [(ngModel)]="email" />
+  <p><strong>Fax:</strong></p> <p>{{ data.fax }} </p><input class="form-control" [(ngModel)]="fax" />
+  <p><strong>Naziv:</strong></p> <p>{{ data.naziv }} </p><input class="form-control" [(ngModel)]="naziv" />
+  <p><strong>Telefon:</strong></p> <p> {{ data.telefon }}</p> <input class="form-control" [(ngModel)]="telefon" />
+            
+  
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-raised-button color="primary" (click)=" onCancelClick()">Close</button>
+  <button mat-raised-button color="primary" (click)=" updateClick()">Update</button>
+</mat-dialog-actions>

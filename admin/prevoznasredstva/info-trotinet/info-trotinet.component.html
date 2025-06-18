@@ -1,0 +1,19 @@
+<div class="container">
+
+    <h2 mat-dialog-title class="header">TROTINET {{data.objectId}}</h2>
+    <mat-dialog-content>
+      <p><strong>Object id:</strong> {{ data.objectId }}</p>
+      <p><strong>Datum Nabavke:</strong> {{ data.datumNabavke }}</p>
+      <p><strong>Cijena nabavke:</strong> {{ data.cijenaNabavke }}</p>
+      <p><strong>Naziv proizvodjaca:</strong> {{ data.proizvodjac.naziv }}</p>
+      <p><strong>Email proizvodjaca:</strong> {{ data.proizvodjac.email }}</p>
+      <p><strong>Model:</strong> {{ data.model }}</p>
+      <p><strong>Kvarovi:</strong> {{ data.kvarovi }}</p>
+      <p><strong>Iznajmljen:</strong> {{ data.iznajmljeno }}</p>
+    </mat-dialog-content>
+    <mat-dialog-actions>
+  
+      <button mat-raised-button color="primary" (click)="onCancelClick()">CLOSE</button>
+    </mat-dialog-actions>
+  </div>
+  

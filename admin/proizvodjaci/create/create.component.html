@@ -1,0 +1,56 @@
+<mat-dialog-content>
+    <h1>Create proizvodjac</h1>
+    <div class="form-group"> 
+      <mat-form-field>
+        <mat-label>ID</mat-label>
+        <input matInput [(ngModel)]="data.id" />
+      </mat-form-field>
+    </div>
+
+    <div class="form-group"> 
+      <mat-form-field>
+        <mat-label>Drzava</mat-label>
+        <input matInput [(ngModel)]="data.drzava" />
+      </mat-form-field>  
+    </div>
+
+    <div class="form-group"> 
+        <mat-form-field>
+          <mat-label>Naziv</mat-label>
+          <input matInput [(ngModel)]="data.naziv" />
+        </mat-form-field>  
+      </div>
+    
+    <div class="form-group"> 
+      <mat-form-field>
+        <mat-label>Email </mat-label>
+        <input matInput [(ngModel)]="data.email" />
+      </mat-form-field>
+    </div>
+
+    <div class="form-group"> 
+      <mat-form-field>
+        <mat-label>Adresa</mat-label>
+        <input matInput [(ngModel)]="data.adresa" />
+      </mat-form-field>
+    </div>
+
+    <div class="form-group"> 
+      <mat-form-field>
+        <mat-label>Fax</mat-label>
+        <input matInput [(ngModel)]="data.fax" />
+      </mat-form-field>   
+    </div>
+
+    <div class="form-group"> 
+      <mat-form-field>
+        <mat-label>Telefon</mat-label>
+        <input matInput [(ngModel)]="data.telefon" />
+      </mat-form-field> 
+    </div>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+    <button mat-button (click)="onCancelClick()">Cancel</button>
+    <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Create</button>
+</mat-dialog-actions> 

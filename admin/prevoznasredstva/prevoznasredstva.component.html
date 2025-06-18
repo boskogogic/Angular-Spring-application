@@ -1,0 +1,235 @@
+<h2> PREVOZNA SREDSTVA </h2>
+<mat-tab-group>
+    <mat-tab label="Automobili">
+      <div>
+        <!-- Search Input for Name Column -->
+        <label for="search">Search by Model:</label>
+        <input type="text" [(ngModel)]="searchText" (input)="applyFilterAutomobil()" placeholder="Search Model..." />
+      </div>
+
+        <table mat-table [dataSource]="dataSourceAuto" class="mat-elevation-z8, body">
+        
+            <!--- Note that these columns can be defined in any order.
+                The actual rendered columns are set as a property on the row definition" -->
+        
+            <!-- Position Column -->
+            <ng-container matColumnDef="position">
+              <th mat-header-cell *matHeaderCellDef> No. </th>
+              <td mat-cell *matCellDef="let element"> {{element.objectId}} </td>
+            </ng-container>
+        
+            <!--  Proizvodjac -->
+            <ng-container matColumnDef="proizvodjac">
+              <th mat-header-cell *matHeaderCellDef> Proizvodjac </th>
+              <td mat-cell *matCellDef="let element"> {{element.proizvodjac.naziv}} </td>
+            </ng-container>
+        
+            <!-- Model Column -->
+            <ng-container matColumnDef="model">
+              <th mat-header-cell *matHeaderCellDef> Model </th>
+              <td mat-cell *matCellDef="let element"> {{element.model}} </td>
+            </ng-container>
+
+            <!-- Model Column -->
+           <!-- <ng-container matColumnDef="cijenaNabavke">
+              <th mat-header-cell *matHeaderCellDef> Cijena nabavke [KM] </th>
+              <td mat-cell *matCellDef="let element"> {{element.cijenaNabavke}} </td>
+            </ng-container>-->
+
+             <!-- delete -->
+            <ng-container matColumnDef="delete">
+              <th mat-header-cell *matHeaderCellDef>  </th>
+              <td mat-cell *matCellDef="let element">
+                  <button mat-raised-button color="warn" (click)="deleteAutomobil(element.id)">
+                  DELETE
+                  </button>
+              </td> 
+            </ng-container>
+
+            <!-- details button click lead to details page -->
+            <ng-container matColumnDef="detalji">
+              <th mat-header-cell *matHeaderCellDef>  </th>
+              <td mat-cell *matCellDef="let element">
+                  <button mat-raised-button color="warn" (click)="detaljiAuto(element)">
+                  INFO
+                  </button>
+              </td> 
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+        </table>
+
+        <section>
+            <div class="example-button-row">
+              <button mat-raised-button color="primary" class="button-row" (click)="createAutomobil()">CREATE AUTOMOBIL</button>
+            </div>
+        </section>
+        <!-- <mat-paginator #paginator
+               class="demo-paginator"
+               (page)="handlePageEvent($event)"
+               [length]="lengthVar"
+               [pageSize]="pageSizeVar"
+               [disabled]="disabled"
+               [showFirstLastButtons]="showFirstLastButtons"
+               [pageSizeOptions]="showPageSizeOptions ? pageSizeOptions : []"
+               [hidePageSize]="hidePageSize"
+               [pageIndex]="pageIndex"
+               aria-label="Select page">
+        </mat-paginator> -->
+        <mat-paginator #paginator
+               class="demo-paginator"
+               (page)="handlePageEvent($event)"
+               [length]="lengthVar"
+               [pageSize]="pageSizeVar"
+               [pageIndex]="pageIndexVar"
+               aria-label="Select page">
+        </mat-paginator>
+        <app-fileupload></app-fileupload>
+
+    </mat-tab>
+
+
+    <mat-tab label="Bicikli"> 
+      <div>
+        <!-- Search Input for Name Column -->
+        <label for="search">Search by Model:</label>
+        <input type="text" [(ngModel)]="searchText" (input)="applyFilterAutomobil()" placeholder="Search Model..." />
+      </div>
+      <table mat-table [dataSource]="dataBicikl" class="mat-elevation-z8, body">
+        
+        <!--- Note that these columns can be defined in any order.
+            The actual rendered columns are set as a property on the row definition" -->
+    
+        <!-- Position Column -->
+        <ng-container matColumnDef="position">
+        <th mat-header-cell *matHeaderCellDef> No. </th>
+        <td mat-cell *matCellDef="let element"> {{element.objectId}} </td>
+        </ng-container>
+    
+        <!-- Proizvodjac Column -->
+        <ng-container matColumnDef="proizvodjac">
+        <th mat-header-cell *matHeaderCellDef> Proizvodjac </th>
+        <td mat-cell *matCellDef="let element"> {{element.proizvodjac.naziv}} </td>
+        </ng-container>
+    
+        <!-- Model Column -->
+        <ng-container matColumnDef="model">
+        <th mat-header-cell *matHeaderCellDef> Model </th>
+        <td mat-cell *matCellDef="let element"> {{element.model}} </td>
+        </ng-container>
+
+        <!-- delete -->
+        <ng-container matColumnDef="delete">
+        <th mat-header-cell *matHeaderCellDef>  </th>
+        <td mat-cell *matCellDef="let element">
+            <button mat-raised-button color="warn" (click)="deleteBicikl(element.id)">
+            DELETE
+            </button>
+        </td> 
+        </ng-container>
+
+        <!-- details button click lead to details page -->
+        <ng-container matColumnDef="detalji">
+          <th mat-header-cell *matHeaderCellDef>  </th>
+          <td mat-cell *matCellDef="let element">
+              <button mat-raised-button color="warn" (click)="detaljiBicikl(element)">
+              INFO
+              </button>
+          </td> 
+          </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+      </table>
+
+    <section>
+        <div class="example-button-row">
+          <button mat-raised-button color="primary" class="button-row" (click)="createBicikl()">CREATE BICIKL</button>
+        </div>
+    </section> 
+    <mat-paginator #paginator
+               class="demo-paginator"
+               (page)="handlePageEvent($event)"
+               [length]="lengthVar"
+               [pageSize]="pageSizeVar"
+               [pageIndex]="pageIndexVar"
+               aria-label="Select page">
+        </mat-paginator>
+    <app-fileupload></app-fileupload>
+
+    </mat-tab>
+    <mat-tab label="Trotineti"> 
+      <div>
+        <!-- Search Input for Name Column -->
+        <label for="search">Search by Model:</label>
+        <input type="text" [(ngModel)]="searchText" (input)="applyFilterAutomobil()" placeholder="Search Model..." />
+      </div>
+      <table mat-table [dataSource]="dataTrotinet" class="mat-elevation-z8, body">
+        
+        <!--- Note that these columns can be defined in any order.
+            The actual rendered columns are set as a property on the row definition" -->
+    
+        <!-- Position Column -->
+        <ng-container matColumnDef="position">
+        <th mat-header-cell *matHeaderCellDef> No. </th>
+        <td mat-cell *matCellDef="let element"> {{element.objectId}} </td>
+        </ng-container>
+    
+        <!-- Proizvodjac Column -->
+        <ng-container matColumnDef="proizvodjac">
+        <th mat-header-cell *matHeaderCellDef> Proizvodjac </th>
+        <td mat-cell *matCellDef="let element"> {{element.proizvodjac.naziv}} </td>
+        </ng-container>
+    
+        <!-- Model Column -->
+        <ng-container matColumnDef="model">
+        <th mat-header-cell *matHeaderCellDef> Model </th>
+        <td mat-cell *matCellDef="let element"> {{element.model}} </td>
+        </ng-container>
+
+        <!-- delete -->
+        <ng-container matColumnDef="delete">
+        <th mat-header-cell *matHeaderCellDef>  </th>
+        <td mat-cell *matCellDef="let element">
+            <button mat-raised-button color="warn" (click)="deleteTrotinet(element.id)">
+            DELETE
+            </button>
+        </td> 
+        </ng-container>
+
+        <!-- details button click lead to details page -->
+        <ng-container matColumnDef="detalji">
+          <th mat-header-cell *matHeaderCellDef>  </th>
+          <td mat-cell *matCellDef="let element">
+              <button mat-raised-button color="warn" (click)="detaljiTrotinet(element)">
+              INFO
+              </button>
+          </td> 
+          </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+      </table>
+
+    <section>
+        <div class="example-button-row">
+          <button mat-raised-button color="primary" class="button-row" (click)="createTrotinet()">CREATE TROTINET</button>
+        </div>
+    </section> 
+    <mat-paginator #paginator
+               class="demo-paginator"
+               (page)="handlePageEvent($event)"
+               [length]="lengthVar"
+               [pageSize]="pageSizeVar"
+               [pageIndex]="pageIndexVar"
+               aria-label="Select page">
+        </mat-paginator>
+    <app-fileupload></app-fileupload>
+
+    </mat-tab>
+</mat-tab-group>
+<!-- <app-fileupload></app-fileupload> -->

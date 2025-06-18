@@ -1,0 +1,20 @@
+.body {
+  width: calc(100% - 5rem);
+  margin-left: 5rem;
+  z-index: 10;
+  position: center;
+  top: 50;
+  transition: all 0.5s ease;
+  background: #ebf1f0;
+  padding: 2rem;
+}
+
+.main-content {
+  margin-left: 5px;  /* Adjust this to match the width of the sidenav */
+  flex-grow: 1;  /* Ensure it takes the remaining width */
+  height: 100%;  /* Ensure it fills the full height */
+  padding: 10px;  /* Optional: Space inside the main content */
+}
+
+@media (max-width: 1000px) {
+}

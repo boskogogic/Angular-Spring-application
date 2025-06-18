@@ -1,0 +1,15 @@
+<div class="container">
+
+    <h2 mat-dialog-title class="header">Korisnik {{data.id}}</h2>
+    <mat-dialog-content>
+      <p><strong>Blokiran:</strong> {{ data.blokiran }}</p>
+      <p><strong>Broj licne karte:</strong> {{ data.brojLicneKarte }}</p>
+      <p><strong>Broj vozacke dozvole:</strong> {{ data.brojVozackeDozvole }}</p>
+      <p><strong>Email </strong> {{ data.email }}</p>
+      <p><strong>Korisnicko ime:</strong> {{ data.korisnickoIme }}</p>
+    </mat-dialog-content>
+    <mat-dialog-actions>
+  
+      <button mat-raised-button color="primary" (click)="onCancelClick()">CLOSE</button>
+    </mat-dialog-actions>
+  </div>
